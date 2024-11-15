@@ -119,9 +119,9 @@ def user_signup(request):
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-        repeatPassword = request.POST['repeatPassword']
+        confirmPassword = request.POST['confirmPassword']
 
-        if password == repeatPassword:
+        if password == confirmPassword:
             try:
                 user = User.objects.create_user(username, email, password)
                 user.save()
